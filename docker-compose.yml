@@ -20,6 +20,7 @@ services:
       - CS2_GAMEMODE=1
       - CS2_STARTMAP=de_dust2
       - CS2_BOT_QUOTA=0
+      - DEBUG=1
 
 volumes:
   cs2-data:
