@@ -1,0 +1,25 @@
+services:
+  cs2:
+    image: joedwards32/cs2
+    container_name: cs2-trainer
+    restart: unless-stopped
+    ports:
+      - "27015:27015/udp"
+      - "27015:27015/tcp"
+      - "27005:27005/udp"
+    volumes:
+      - cs2-data:/home/steam/cs2-dedicated
+      - ./addons:/home/steam/cs2-dedicated/game/csgo/addons
+    environment:
+      - STEAMAPPVALIDATE=0
+      - CS2_SERVERNAME=CS2 Trainer Dev
+      - CS2_CHEATS=1
+      - CS2_PORT=27015
+      - CS2_MAXPLAYERS=5
+      - CS2_GAMETYPE=0
+      - CS2_GAMEMODE=1
+      - CS2_STARTMAP=de_dust2
+      - CS2_BOT_QUOTA=0
+
+volumes:
+  cs2-data:
